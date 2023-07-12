@@ -24,8 +24,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 375px;
-  height: 812px;
+  width: 380px;
+  height: 678px;
   background-color: var(--dark);
 }
 
@@ -78,7 +78,7 @@ strong {
   background-size: cover;
   width: 80%;
   height: 3%;
-  margin-top: 13rem;
+  margin-top: 10rem;
   z-index: 99;
 }
 
@@ -86,7 +86,7 @@ strong {
   position: absolute;
   color: var(--dark);
   font-size: 4rem;
-  top: 45%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%);
   z-index: 99;
@@ -136,6 +136,7 @@ strong {
   border: solid 2px var(--dark);
   z-index: 100;
   background-color: var(--beige);
+  color: var(--dark);
   bottom: 7rem;
   font-weight: 500;
   font-size: 24px;

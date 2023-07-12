@@ -1,8 +1,8 @@
 // Set the focus duration in minutes
-const focusDuration = 1; // Example: 25 minutes
+const focusDuration = 1; // Example: 1 minute
 
 // Set the break duration in minutes
-const breakDuration = 1; // Example: 5 minutes
+const breakDuration = 1; // Example: 1 minute
 
 // Convert minutes to milliseconds
 const focusDurationMs = focusDuration * 60 * 1000;
@@ -23,11 +23,27 @@ function updateTimer() {
   timerElement.textContent = `${minutes}:${seconds}`;
 }
 
+// Create an audio context
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+// Fetch and decode the audio file
+function fetchAudioFile(url) {
+  return fetch(url)
+    .then((response) => response.arrayBuffer())
+    .then((arrayBuffer) => audioContext.decodeAudioData(arrayBuffer));
+}
+
 // Play notification sound
 function playNotificationSound() {
   // Replace 'notification-sound.mp3' with the path to your desired sound file
-  const audio = new Audio('./sound/sound.mp3');
-  audio.play();
+  fetchAudioFile('./sound/sound.mp3')
+    .then((audioBuffer) => {
+      const source = audioContext.createBufferSource();
+      source.buffer = audioBuffer;
+      source.connect(audioContext.destination);
+      source.start(0);
+    })
+    .catch((error) => console.error('Error decoding audio data:', error));
 }
 
 // Start the timer

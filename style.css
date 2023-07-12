@@ -1,0 +1,163 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Mono';
+}
+
+:root {
+  --red: #c44b43;
+  --beige: #ffd5a7;
+  --dark: #0e1d27;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 375px;
+  height: 812px;
+  background-color: var(--dark);
+}
+
+.dust {
+  background-image: url(./images/Dust\ background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 15%;
+}
+
+.rocket {
+  position: absolute;
+  top: 3rem;
+  background-image: url(./images/rocket.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 45%;
+  height: 3.5%;
+}
+
+h2 {
+  position: absolute;
+  top: 5rem;
+  color: var(--beige);
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+strong {
+  color: var(--red);
+}
+
+.background {
+  position: absolute;
+  top: 11rem;
+  background-image: url(./images/Background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 78.5%;
+}
+
+.arrows {
+  background-image: url(./images/arrows.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80%;
+  height: 3%;
+  margin-top: 13rem;
+  z-index: 99;
+}
+
+#timer {
+  position: absolute;
+  color: var(--dark);
+  font-size: 4rem;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 99;
+}
+
+#minute {
+  position: absolute;
+  color: var(--dark);
+  font-size: 4rem;
+  top: 50%;
+  left: 15%;
+  z-index: 99;
+}
+
+#dots {
+  position: absolute;
+  color: var(--dark);
+  font-size: 4rem;
+  top: 50%;
+}
+
+#second {
+  position: absolute;
+  color: var(--dark);
+  font-size: 4rem;
+  top: 50%;
+  right: 15%;
+  z-index: 99;
+}
+
+.arrows-2 {
+  background-image: url(./images/arrows.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80%;
+  height: 3%;
+  margin-top: 7rem;
+  z-index: 99;
+  transform: rotate(180deg);
+}
+
+#start {
+  position: absolute;
+  width: 274px;
+  height: 56px;
+  border-radius: 5px;
+  border: solid 2px var(--dark);
+  z-index: 100;
+  background-color: var(--beige);
+  bottom: 7rem;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#start:active,
+#stop:active {
+  transform: translateY(2px);
+}
+
+#stop {
+  position: absolute;
+  width: 274px;
+  height: 56px;
+  border-radius: 5px;
+  border: solid 2px var(--red);
+  z-index: 100;
+  background-color: var(--red);
+  color: var(--beige);
+  bottom: 2rem;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+}

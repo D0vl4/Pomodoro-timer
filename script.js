@@ -96,3 +96,10 @@ function resetTimer() {
 // Add event listeners to buttons
 document.getElementById('start').addEventListener('click', startTimer);
 document.getElementById('stop').addEventListener('click', resetTimer);
+
+// Ensure the audio context is resumed on user interaction
+document.addEventListener('click', () => {
+  if (audioContext.state === 'suspended') {
+    audioContext.resume();
+  }
+});

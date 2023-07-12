@@ -1,8 +1,8 @@
 // Set the focus duration in minutes
-const focusDuration = 1; // Example: 1 minute
+const focusDuration = 25; // Example: 25 minute
 
 // Set the break duration in minutes
-const breakDuration = 1; // Example: 1 minute
+const breakDuration = 5; // Example: 5 minute
 
 // Convert minutes to milliseconds
 const focusDurationMs = focusDuration * 60 * 1000;
